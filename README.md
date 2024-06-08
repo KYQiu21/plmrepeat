@@ -68,4 +68,4 @@ CRVGGYVMIQGGCRF---
 ```
 
 ## Dataset
-Sequences with low functional brightness (<0.1) from [AFDBv4_90 database](https://uniprot3d.org/) are scanned for repeat detection. Identified repeat sequences are checked on sequence novelty (HHSearch ECOD70 probability < 0.3), structural novelty (Foldseek PDB100 E-value > 10) and coiled-coil propensity.
+Sequences with low functional brightness (<0.1) from [AFDBv4_90 database](https://uniprot3d.org/) are scanned for repeat detection. Identified repeat sequences are checked on sequence novelty (HHSearch ECOD70 probability < 0.3), structural novelty (Foldseek PDB100 E-value > 0.1) and coiled-coil propensity.
