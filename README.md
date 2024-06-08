@@ -42,9 +42,10 @@ code to run DeepRepeat
 Example on protein 4R36_A:\
 ![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/example.png)
 
-Residue range of detected repeats:\
+Residue range of detected repeats:
+```
 (31, 46), (49, 64), (67, 82), (97, 112), (121, 136), (139, 156), (157, 172), (175, 190)
-
+```
 Repeat alignment (experimental):
 ```
 >representative repeat
