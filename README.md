@@ -20,7 +20,7 @@ The workflow of pLM-Repeat can be briefly described as these steps:
 5. Determine positions of the representative repeat using a sliding window with the estimated length
 6. Compute a weighted embedding of the representative repeat
 7. Conduct another round of pLM-BLAST search between representative embedding and full-length sequence embedding to extract repeat instances
-8. Output alignment (score) matrix, repeat ranges, and multiple sequence alignment
+8. Output alignment (score) matrix, repeat ranges, and multiple sequence alignment (experimental)
 
 ![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/figure1_workflow.jpg)
 
@@ -46,7 +46,7 @@ Residue range of detected repeats:
 ```
 (31, 46), (49, 64), (67, 82), (97, 112), (121, 136), (139, 156), (157, 172), (175, 190)
 ```
-Repeat alignment (experimental):
+Repeat alignment (Please note that the multiple alignment is created by directly combining pairwise alignments of representative repeat v.s. detected repeat, so the concatenated multiple alignment could be far away from optimal):
 ```
 >representative repeat
 ALIGNGCIVGNSTKMAGE
