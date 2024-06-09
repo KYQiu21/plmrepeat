@@ -25,7 +25,6 @@ The workflow of pLM-Repeat can be briefly described as these steps:
 ![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/figure1_workflow.jpg)
 
 ## Performance
-![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/figure2_benchmark.jpg)
 ![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/figure3_performance_case.jpg)
 
 ## Usage
