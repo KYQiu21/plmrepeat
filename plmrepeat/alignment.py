@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import torch
 
-sys.path.append('/ebio/abt1_share/propeller_intermediate/tool/new-pLM-BLAST-main')
+sys.path.append('...')
 import alntools as aln
 import warnings
 
