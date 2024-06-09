@@ -13,7 +13,7 @@ pip install -r requirement.txt
 ```
 ## Introduction
 The workflow of pLM-Repeat can be briefly described as these steps:
-1. Perform self-sequence alignment using [pLM-BLAST (Kaminski et al., Bioinformatics, 2023)](https://academic.oup.com/bioinformatics/article/39/10/btad579/7277200)
+1. Perform self-sequence alignment using [pLM-BLAST (Kaminski et al., Bioinformatics, 2023)](https://academic.oup.com/bioinformatics/article/39/10/btad579/7277200). For more details on pLM-BLAST, please check the reference and [its repository](https://github.com/labstructbioinf/pLM-BLAST).
 2. Add transitive traces
 3. Build the score matrix based on all traces
 4. Estimate possible lengths of repeat via the cumulative score to the diagonal
@@ -67,5 +67,5 @@ IIIDDNAIISANVLM---
 CRVGGYVMIQGGCRF---
 ```
 
-## Dataset
-Sequences with low functional brightness (<0.1) from [AFDBv4_90 database](https://uniprot3d.org/) are scanned for repeat detection. Identified repeat sequences are checked on sequence novelty (HHSearch ECOD70 probability < 0.3), structural novelty (Foldseek PDB100 E-value > 0.1) and coiled-coil propensity.
+## Contact
+This repository is under active construction. Please get in touch via kaiyu.qiu@tuebingen.mpg.de if you encounter any issues when using the pipeline once it is ready. Many thanks!
