@@ -1,4 +1,4 @@
-# pLM-Repeat
+# Protein sequence representations for repeat detection (under construction)
 
 ## Install
 To use pLM-Repeat, you first need to set up the python environment.
