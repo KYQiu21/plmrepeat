@@ -30,7 +30,7 @@ The workflow of pLM-Repeat can be briefly described as these steps:
 ## Usage
 1. Run pLM-Repeat to detect repeats
 ```
-python ./scripts/plmrepeat.py --emb path_to_embedding --seq path_to_fasta --out path_to_output --transitivity --draw
+python plmrepeat.py --emb path_to_embedding --seq path_to_fasta --out path_to_output --transitivity --draw
 ```
 2. Run DeepRepeat model
 ```
