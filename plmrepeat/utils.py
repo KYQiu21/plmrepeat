@@ -88,15 +88,18 @@ def draw_repeat_matrix(score_matrix: np.ndarray, repeat_range: (int, int), save=
     # plt.show()
 
 
-def select_length(all_result_info_dict: dict, metrics='trace_cluster_range_list'):
+def select_length(all_result_info_dict: dict, metrics='repeat_total_len'):
     """
     select the length of repeat reporting the best extraction
 
+    metrics: which metrics used to select the repeat length
+
     """
 
-    max_idx = max(all_result_info_dict.keys(), key=lambda k: all_result_info_dict[k]['repeat_total_len'])
+    print(f"{metrics} is used to select repeat length!")
+    max_idx = max(all_result_info_dict.keys(), key=lambda k: all_result_info_dict[k][metrics])
     select_result_info_dict = all_result_info_dict[max_idx]
-    repeat_range_list = select_result_info_dict[metrics]
+    repeat_range_list = select_result_info_dict['trace_cluster_range_list']
 
     return select_result_info_dict, repeat_range_list
 
