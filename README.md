@@ -30,12 +30,11 @@ The workflow of pLM-Repeat can be briefly described as these steps:
 ## Usage
 1. Run pLM-Repeat to detect repeats
 ```
+cd path_to_plmrepeat
 python plmrepeat.py --emb path_to_embedding --seq path_to_fasta --out path_to_output --transitivity --draw
+e.g. python plmrepeat.py --emb ./example/2QJ6_A.emb --seq ./example/2QJ6_A.fasta --out ./example/ --transitivity --draw
 ```
 2. Run DeepRepeat model
-```
-code to run DeepRepeat
-```
 
 ## Output
 Example on protein 4R36_A:\
