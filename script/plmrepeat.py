@@ -26,7 +26,7 @@ def create_arg_parser():
     # for repeat extraction
     parser.add_argument('--scan-ssa-score', default=0.2, type=float, help='alignment score threshold for repeat extraction')
     parser.add_argument('--scan-sigma-factor', default=2.0, type=float, help='sigma factor for repeat extraction')
-    parser.add_argument('--weighted-repeat-emb', type=bool, default=True, help="Whether to use re-weighted embeddings for the representative repeat")
+    parser.add_argument('--weighted-repeat-emb', action='store_true', help="Whether to use re-weighted embeddings for the representative repeat")
 
     # === pLM-Repeat ======================================================================================================================== #
     # parser.add_argument('--transitivity', default=True, type=bool, help='whether to use transitivity')
@@ -36,6 +36,7 @@ def create_arg_parser():
     parser.add_argument('--repeat-avglen', default=10, type=int, help='minimum average length of detected repeats except for the longest one')
     parser.add_argument('--repeat-score', default=10, type=int, help='minimum score of detected repeats')
     parser.add_argument('--overlap-threshold', default=0.3, type=int, help='maximum overlap threshold of detected traces to accept')
+    parser.add_argument('--metrics', default='repeat_total_len', type=str, help='metrics used to select repeat length')
     parser.add_argument('--draw', action='store_true', help='whether to draw intermediate results')
 
     return parser
@@ -86,7 +87,7 @@ def main():
     for repeat_idx, repeat_result in result.items():
 
         single_repeat_result = result[repeat_idx]
-        select_result_info_dict, repeat_range_list = select_length(single_repeat_result)
+        select_result_info_dict, repeat_range_list = select_length(single_repeat_result, metrics=metrics)
 
         # draw intermediate outputs and final alignments
         save_result(select_result_info_dict, repeat_idx, draw=draw, save_path=save_path)
