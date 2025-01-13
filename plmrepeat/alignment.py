@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import torch
 
+# import the plm-blast package according to your path
 sys.path.append('./pLM-BLAST-main/')
 import alntools as aln
 import warnings
