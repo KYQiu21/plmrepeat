@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import torch
 
-sys.path.append('...')
+sys.path.append('./pLM-BLAST-main/')
 import alntools as aln
 import warnings
 
