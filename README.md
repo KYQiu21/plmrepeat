@@ -1,4 +1,4 @@
-# Protein sequence representations for repeat detection (under construction)
+# Protein sequence representations for repeat detection
 
 ## Install
 To use pLM-Repeat, you first need to set up the python environment.
@@ -10,14 +10,16 @@ conda activate your_path_to_new_env
 2. Install dependencies:
 ```
 pip install -r requirement.txt
+cd path_to_plmrepeat
+pip install -e .
 ```
 ## Introduction
-The workflow of pLM-Repeat can be briefly described as these steps:
+The workflow of pLM-Repeat can be briefly described as follows:
 1. Perform self-sequence alignment using [pLM-BLAST (Kaminski et al., Bioinformatics, 2023)](https://academic.oup.com/bioinformatics/article/39/10/btad579/7277200). For more details on pLM-BLAST, please check the reference and [its repository](https://github.com/labstructbioinf/pLM-BLAST).
 2. Add transitive traces
 3. Build the score matrix based on all traces
 4. Estimate possible lengths of repeat via the cumulative score to the diagonal
-5. Determine positions of the representative repeat using a sliding window with the estimated length
+5. Determine the positions of the representative repeat using a sliding window with the estimated length
 6. Compute a weighted embedding of the representative repeat
 7. Conduct another round of pLM-BLAST search between representative embedding and full-length sequence embedding to extract repeat instances
 8. Output alignment (score) matrix, repeat ranges, and multiple sequence alignment (experimental)
@@ -28,13 +30,17 @@ The workflow of pLM-Repeat can be briefly described as these steps:
 ![image](https://github.com/KYQiu21/plmrepeat/blob/main/figure/figure3_performance_case.jpg)
 
 ## Usage
-1. Run pLM-Repeat to detect repeats
+Run pLM-Repeat to detect repeats
 ```
 cd path_to_plmrepeat
-python ./script/plmrepeat.py --emb path_to_embedding --seq path_to_fasta --out path_to_output --transitivity --draw
-e.g. python ./script/plmrepeat.py --emb ./example/2QJ6_A.emb --seq ./example/2QJ6_A.fasta --out ./example/ --transitivity --draw
+plmrepeat-run --emb path_to_embedding_file --seq path_to_sequence_file --out path_to_output_dir --transitivity --draw
+e.g. plmrepeat-run --emb ./example/2QJ6_A.emb --seq ./example/2QJ6_A.fasta --out ./example/2QJ6_A/ --transitivity --draw
 ```
-2. Run DeepRepeat model
+See help information
+```
+plmrepeat-run --help
+```
+The colab demo version is available here: https://colab.research.google.com/drive/1ouBwciiXy7HPnddut15JAGAmREWaqaZ7. In this colab notebook, you can run pLM-Repeat in an interactive way, i.e. selecting optimal repeat length based on the score/substitution matrix plot.
 
 ## Output
 Example on protein 4R36_A:\
