@@ -5,10 +5,6 @@ from collections import defaultdict
 from itertools import combinations
 import copy
 
-import warnings
-
-warnings.filterwarnings("ignore")
-
 
 def transitive_aln_pair(aln_pair1: np.ndarray, aln_pair2: np.ndarray):
     """
