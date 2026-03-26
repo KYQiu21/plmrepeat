@@ -4,10 +4,6 @@ import numpy as np
 from itertools import combinations
 from sklearn.cluster import AgglomerativeClustering
 from typing import List, Union
-import warnings
-
-warnings.filterwarnings("ignore")
-
 
 # Functions to process plmblast-format result dataframe and remove trace redundancy
 
