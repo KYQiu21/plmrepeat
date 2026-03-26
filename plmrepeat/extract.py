@@ -1,9 +1,5 @@
 from collections import defaultdict
-from utils import *
-import warnings
-
-warnings.filterwarnings("ignore")
-
+from .utils import *
 
 def fill_diagonal(score_matrix: np.ndarray):
 
