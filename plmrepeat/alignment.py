@@ -1,14 +1,21 @@
+from pathlib import Path
 import sys
 import pandas as pd
 import numpy as np
 import torch
 
-# import the plm-blast package according to your path
-sys.path.append('./pLM-BLAST-main/')
-import alntools as aln
-import warnings
+CURRENT_FILE = Path(__file__).resolve()
+PROJECT_ROOT = CURRENT_FILE.parent.parent
+PLMBLAST_PATH = PROJECT_ROOT / "pLM-BLAST-main"
 
-warnings.filterwarnings("ignore")
+if not PLMBLAST_PATH.exists():
+    raise ImportError(
+        f"Cannot find pLM-BLAST at expected path: {PLMBLAST_PATH}. "
+        "Please place 'pLM-BLAST-main' in the project root or install pLM-BLAST properly."
+    )
+
+if str(PLMBLAST_PATH) not in sys.path:
+    sys.path.insert(0, str(PLMBLAST_PATH))
 
 
 def self_alignment(emb, seq, bfactor=1, sigma_factor=2, window=10, min_span=10, gap_penalty=0,
