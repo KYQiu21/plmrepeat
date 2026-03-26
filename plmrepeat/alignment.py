@@ -17,6 +17,8 @@ if not PLMBLAST_PATH.exists():
 if str(PLMBLAST_PATH) not in sys.path:
     sys.path.insert(0, str(PLMBLAST_PATH))
 
+import alntools as aln
+
 
 def self_alignment(emb, seq, bfactor=1, sigma_factor=2, window=10, min_span=10, gap_penalty=0,
                    column='score'):
