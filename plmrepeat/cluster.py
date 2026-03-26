@@ -251,7 +251,7 @@ def cluster_trace(results: pd.DataFrame, dist_array: np.ndarray, threshold: floa
         column: features used to select a representative from a cluster
     """
 
-    clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage='complete',
+    clustering = AgglomerativeClustering(n_clusters=None, metric='precomputed', linkage='complete',
                                          distance_threshold=threshold)
     trace_label = clustering.fit_predict(dist_array)
     results['cluster'] = trace_label
@@ -285,7 +285,7 @@ def cluster_trace_no_remove(results: pd.DataFrame, dist_array: np.ndarray, thres
         column: features used to select a representative from a cluster
     """
 
-    clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage='complete',
+    clustering = AgglomerativeClustering(n_clusters=None, metric='precomputed', linkage='complete',
                                          distance_threshold=threshold)
     trace_label = clustering.fit_predict(dist_array)
     results['cluster'] = trace_label
