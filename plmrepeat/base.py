@@ -1,11 +1,11 @@
 import numpy as np
 from pandas import DataFrame
 
-from alignment import *
-from cluster import *
-from transitivity import *
-from extract import *
-from utils import *
+from .alignment import *
+from .cluster import *
+from .transitivity import *
+from .extract import *
+from .utils import *
 import pickle
 
 
