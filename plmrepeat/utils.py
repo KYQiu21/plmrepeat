@@ -104,7 +104,7 @@ def select_length(all_result_info_dict: dict, metrics='repeat_total_len'):
     return select_result_info_dict, repeat_range_list
 
 
-def save_result(result_info_dict: dict, idx: int, draw: True, save_path: str):
+def save_result(result_info_dict: dict, idx: int, draw: True, save_path: str, repeat_idx: int):
     """
     save outputs generated during thw workflow
 
@@ -135,5 +135,9 @@ def save_result(result_info_dict: dict, idx: int, draw: True, save_path: str):
         else:
             new_repeat_seq_dict[seq_id] = seq
 
-    records = [SeqIO.SeqRecord(seq, id=seq_id) for seq_id, seq in new_repeat_seq_dict.items()]
-    SeqIO.write(records, os.path.join(save_path, f'all_repeat_alignment{idx}.fasta'), 'fasta')
+    repeat_file_path = os.path.join(save_path, f'all_repeat_alignment{str(repeat_idx)}.fasta')
+    with open(repeat_file_path, 'w') as f:
+        for entry, seq in new_repeat_seq_dict.items():
+            f.write(f'>{entry}\n{seq}\n')
+        f.close()
+
