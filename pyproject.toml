@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plmrepeat"
+version = "0.1.0"
+description = "Protein repeat detection using protein language model embeddings"
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "torch",
+    "biopython"
+]
+
+[project.scripts]
+plmrepeat-run = "plmrepeat.cli:main"
+
+[tool.setuptools]
+packages = ["plmrepeat"]
